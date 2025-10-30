@@ -34,6 +34,14 @@ const Header: React.FC = () => {
               target="_blank" 
               rel="noopener noreferrer" 
               className="hidden md:inline-block bg-[#2AC1FF] text-white font-bold py-2 px-6 rounded-full hover:bg-opacity-90 transition-all shadow-md hover:shadow-lg"
+              onClick={(e) => {
+                try {
+                  if (localStorage.getItem('uyOwner') === '1') {
+                    e.preventDefault();
+                    window.dispatchEvent(new Event('open-join-modal'));
+                  }
+                } catch {}
+              }}
             >
               Join Now
             </a>
@@ -64,6 +72,14 @@ const Header: React.FC = () => {
               target="_blank" 
               rel="noopener noreferrer" 
               className="bg-[#2AC1FF] text-white font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition-all shadow-md hover:shadow-lg w-full text-center mx-4"
+              onClick={(e) => {
+                try {
+                  if (localStorage.getItem('uyOwner') === '1') {
+                    e.preventDefault();
+                    window.dispatchEvent(new Event('open-join-modal'));
+                  }
+                } catch {}
+              }}
             >
               Join Now
             </a>
