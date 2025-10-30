@@ -53,16 +53,22 @@ const Team: React.FC = () => {
                 </div>
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-                    {teamMembers.map((member, index) => (
-                        <TeamMemberCard
-                            key={index}
-                            name={member.name}
-                            role={member.role}
-                            gender={member.gender}
-                            index={index}
-                            imageUrl={(member.role === 'Founder & President' || member.name.toLowerCase().startsWith('sardorbek')) ? '/Sardorbek.jpg?v=2' : undefined}
-                        />
-                    ))}
+                    {teamMembers.map((member, index) => {
+                        const isFounder = member.role === 'Founder & President' || member.name.toLowerCase().startsWith('sardorbek');
+                        const founderUrl = typeof window !== 'undefined'
+                            ? `${window.location.origin}/Sardorbek.jpg?v=${Date.now()}`
+                            : '/Sardorbek.jpg';
+                        return (
+                            <TeamMemberCard
+                                key={index}
+                                name={member.name}
+                                role={member.role}
+                                gender={member.gender}
+                                index={index}
+                                imageUrl={isFounder ? founderUrl : undefined}
+                            />
+                        );
+                    })}
                 </div>
             </div>
         </section>
