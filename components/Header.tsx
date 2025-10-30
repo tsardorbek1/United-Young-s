@@ -18,8 +18,9 @@ const Header: React.FC = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 backdrop-blur-sm shadow-md' : 'bg-transparent'}`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <a href="#home">
-            <Logo />
+          <a href="#home" className="flex items-center space-x-2">
+            <img src="/uy-logo.jpg" alt="United Youngs Logo" className="h-14 w-auto" />
+            <h4 className="text-2xl font-bold text-gray-400">United Youngs</h4>
           </a>
           <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
