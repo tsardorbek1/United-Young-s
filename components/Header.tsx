@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { JOIN_NOW_URL, navLinks } from '../constants';
+import Logo from './Logo';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,8 +19,7 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <a href="#home" className="flex items-center space-x-2">
-            <img src="/uy-logo.jpg" alt="United Youngs Logo" className="h-14 w-auto" />
-            <h4 className="text-2xl font-bold text-gray-400">United Youngs</h4>
+            <Logo showText textColor="text-gray-400" imgClassName="h-14 w-auto" />
           </a>
           <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
