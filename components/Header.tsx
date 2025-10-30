@@ -19,7 +19,7 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <a href="#home" className="flex items-center space-x-2">
-            <Logo showText textColor="text-gray-400" imgClassName="h-14 w-auto" />
+            <Logo showText textColor="text-blue-400" imgClassName="h-14 w-auto" />
           </a>
           <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
