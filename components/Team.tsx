@@ -10,17 +10,34 @@ interface TeamMemberCardProps {
     imageUrl?: string;
 }
 
-const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ name, role, gender, index, imageUrl }) => (
-    <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow text-center">
-        <img
-            className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-            src={imageUrl ?? `https://xsgames.co/randomusers/assets/avatars/${gender}/${index}.jpg`}
-            alt={name}
-        />
-        <h3 className="text-lg font-bold text-slate-900">{name}</h3>
-        <p className="text-[#2AC1FF] font-medium">{role}</p>
-    </div>
-);
+const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ name, role, gender, index, imageUrl }) => {
+    const fallbackUrl = `https://xsgames.co/randomusers/assets/avatars/${gender}/${index}.jpg`;
+    const localNameToPath = (fullName: string) => {
+        const slug = fullName
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/(^-|-$)/g, '');
+        return `/team/${slug}.jpg`;
+    };
+    const initialSrc = imageUrl ?? localNameToPath(name);
+    return (
+        <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow text-center">
+            <img
+                className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+                src={initialSrc}
+                alt={name}
+                onError={(e) => {
+                    const img = e.currentTarget as HTMLImageElement;
+                    if (img.src !== fallbackUrl) {
+                        img.src = fallbackUrl;
+                    }
+                }}
+            />
+            <h3 className="text-lg font-bold text-slate-900">{name}</h3>
+            <p className="text-[#2AC1FF] font-medium">{role}</p>
+        </div>
+    );
+};
 
 const Team: React.FC = () => {
     return (
@@ -43,7 +60,6 @@ const Team: React.FC = () => {
                             role={member.role}
                             gender={member.gender}
                             index={index}
-                            imageUrl={member.role === 'Founder & President' ? '/Me1.jpg' : undefined}
                         />
                     ))}
                 </div>
