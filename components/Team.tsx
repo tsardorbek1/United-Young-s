@@ -60,7 +60,7 @@ const Team: React.FC = () => {
                             role={member.role}
                             gender={member.gender}
                             index={index}
-                            imageUrl={(member.role === 'Founder & President' || member.name.toLowerCase().startsWith('sardorbek')) ? '/Sardorbek.jpg' : undefined}
+                            imageUrl={(member.role === 'Founder & President' || member.name.toLowerCase().startsWith('sardorbek')) ? '/Sardorbek.jpg?v=2' : undefined}
                         />
                     ))}
                 </div>
