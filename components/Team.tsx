@@ -7,13 +7,14 @@ interface TeamMemberCardProps {
     role: string;
     gender: 'male' | 'female';
     index: number;
+    imageUrl?: string;
 }
 
-const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ name, role, gender, index }) => (
+const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ name, role, gender, index, imageUrl }) => (
     <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow text-center">
         <img
             className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-            src={`https://xsgames.co/randomusers/assets/avatars/${gender}/${index}.jpg`}
+            src={imageUrl ?? `https://xsgames.co/randomusers/assets/avatars/${gender}/${index}.jpg`}
             alt={name}
         />
         <h3 className="text-lg font-bold text-slate-900">{name}</h3>
@@ -36,7 +37,14 @@ const Team: React.FC = () => {
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
                     {teamMembers.map((member, index) => (
-                        <TeamMemberCard key={index} name={member.name} role={member.role} gender={member.gender} index={index} />
+                        <TeamMemberCard
+                            key={index}
+                            name={member.name}
+                            role={member.role}
+                            gender={member.gender}
+                            index={index}
+                            imageUrl={member.role === 'Founder & President' ? '/Me1.jpg' : undefined}
+                        />
                     ))}
                 </div>
             </div>

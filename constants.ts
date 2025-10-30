@@ -33,7 +33,7 @@ export const testimonials = [
 ];
 
 export const teamMembers: { name: string; role: string; gender: 'male' | 'female' }[] = [
-  { name: 'Sardorbek (Tony)', role: 'Founder & President', gender: 'male' },
+  { name: 'Sardorbek (Tony)', role: 'Founder & CTO', gender: 'male' },
   { name: 'Iroda (Ira)', role: 'Co-Founder & CEO', gender: 'female' },
   { name: 'Marcus Chen', role: 'Head of STEM', gender: 'male' },
   { name: 'Sofia Rossi', role: 'IELTS Program Lead', gender: 'female' },

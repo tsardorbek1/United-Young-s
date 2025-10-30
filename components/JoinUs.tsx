@@ -16,14 +16,6 @@ const JoinUs: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-8 inline-block bg-[#2AC1FF] text-white font-bold text-lg py-4 px-10 rounded-full hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
-                onClick={(e) => {
-                  try {
-                    if (localStorage.getItem('uyOwner') === '1') {
-                      e.preventDefault();
-                      window.dispatchEvent(new Event('open-join-modal'));
-                    }
-                  } catch {}
-                }}
             >
                 Join Now →
             </a>
