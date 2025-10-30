@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Logo from './Logo';
 import { JOIN_NOW_URL, navLinks } from '../constants';
 
 const Header: React.FC = () => {
