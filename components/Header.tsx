@@ -15,11 +15,11 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 backdrop-blur-sm shadow-md' : 'bg-transparent'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/70 backdrop-blur-sm shadow-md' : 'bg-transparent'}`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <a href="#home" className="flex items-center space-x-2">
-            <Logo showText textColor="text-blue-400" imgClassName="h-14 w-auto" />
+            <Logo showText textColor="text-[#2AC1FF]" imgClassName="h-14 w-auto" />
           </a>
           <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (

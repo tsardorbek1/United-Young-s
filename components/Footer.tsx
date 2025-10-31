@@ -30,9 +30,36 @@ const Footer: React.FC = () => {
                     
                     <div>
                         <h3 className="font-bold text-lg mb-4">Contact</h3>
-                        <ul className="space-y-2">
+                        <ul className="space-y-3">
                             <li>
-                                <a href="mailto:unitedyoungs.global@gmail.com" className="text-slate-400 hover:text-white transition-colors">unitedyoungs.global@gmail.com</a>
+                                <a href="mailto:unitedyoungs2025@gmail.com" className="flex items-center space-x-2 text-slate-300 hover:text-white transition-colors">
+                                    <span className="inline-block h-2 w-2 rounded-full bg-[#2AC1FF]"></span>
+                                    <span>unitedyoungs2025@gmail.com</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/sardorturdimurodov79b417365?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-slate-300 hover:text-white transition-colors">
+                                    <span>🔗</span>
+                                    <span>LinkedIn</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://t.me/unitedyoungs" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-slate-300 hover:text-white transition-colors">
+                                    <span>💬</span>
+                                    <span>Telegram</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/reel/DMkYfpwIKqV/?igsh=MWRwcmhuNnpub20xYQ==" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-slate-300 hover:text-white transition-colors">
+                                    <span>📸</span>
+                                    <span>Instagram</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://x.com/UnitedYoungs?s=09" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-slate-300 hover:text-white transition-colors">
+                                    <span>𝕏</span>
+                                    <span>Twitter/X</span>
+                                </a>
                             </li>
                         </ul>
                     </div>
