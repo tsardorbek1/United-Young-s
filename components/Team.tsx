@@ -58,6 +58,10 @@ const Team: React.FC = () => {
                         const founderUrl = typeof window !== 'undefined'
                             ? `${window.location.origin}/Sardorbek.jpg?v=${Date.now()}`
                             : '/Sardorbek.jpg';
+                        const isIroda = member.name.toLowerCase().startsWith('iroda');
+                        const irodaUrl = typeof window !== 'undefined'
+                            ? `${window.location.origin}/ira.jpg?v=${Date.now()}`
+                            : '/ira.jpg';
                         return (
                             <TeamMemberCard
                                 key={index}
@@ -65,7 +69,7 @@ const Team: React.FC = () => {
                                 role={member.role}
                                 gender={member.gender}
                                 index={index}
-                                imageUrl={isFounder ? founderUrl : undefined}
+                                imageUrl={isFounder ? founderUrl : (isIroda ? irodaUrl : undefined)}
                             />
                         );
                     })}
